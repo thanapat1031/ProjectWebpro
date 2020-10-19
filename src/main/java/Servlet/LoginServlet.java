@@ -46,13 +46,8 @@ public class LoginServlet extends HttpServlet {
         //int customerNumber = Integer.parseInt(userName);
         Query qry = em.createNamedQuery("Customer.findByUserName");
         qry.setParameter("userName", userName);
-        //Customer c = em.find(Customer.class, customerNumber);
         Customer c = (Customer) qry.getSingleResult();
-        //Customer c = em.find(Customer.class, userName);
-
         if (c != null && c.getPassWord().equals(password)) {
-//          if(userName.equals("thanapat") && password.equals("1234")){
-
             request.getRequestDispatcher("/index.html").forward(request, response);
         } else {
             request.setAttribute("message", "Invalid User id or password");
