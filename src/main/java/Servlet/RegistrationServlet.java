@@ -5,29 +5,19 @@
  */
 package Servlet;
 
-import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceUnit;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author User
  */
-public class LoginServlet extends HttpServlet {
+public class RegistrationServlet extends HttpServlet {
 
-    //@PersistenceUnit(unitName = "sit.int303.webpro_ClassicModelWebApp_war_1.0-SNAPSHOTPU") // copy 
-    @PersistenceUnit(unitName = "com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,26 +29,19 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-        String userName = request.getParameter("username");
-        String password = request.getParameter("password");
-        //int customerNumber = Integer.parseInt(userName);
-        Query qry = em.createNamedQuery("Customer.findByUserName");
-        qry.setParameter("userName", userName);
-        //Customer c = em.find(Customer.class, customerNumber);
-        Customer c = (Customer) qry.getSingleResult();
-        //Customer c = em.find(Customer.class, userName);
-
-        if (c != null && c.getPassWord().equals(password)) {
-//          if(userName.equals("thanapat") && password.equals("1234")){
-
-            request.getRequestDispatcher("/index.html").forward(request, response);
-        } else {
-            request.setAttribute("message", "Invalid User id or password");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RegistrationServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet RegistrationServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -73,7 +56,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/index.html").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
