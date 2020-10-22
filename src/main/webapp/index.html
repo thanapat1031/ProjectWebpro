@@ -160,16 +160,32 @@
         </style>
     </head>
     <body class="bg">
-        <nav class="navbar navbar-expand-sm bg-warning">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">How to use?</a></li>
-                <li class="nav-item"><button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button></li>
-            </ul>
-        </nav><br>
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="index.html">Meow Meow</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Product<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How To Use?</a>
+                    </li>
+<!--                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>-->
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>
+                </div>
+            </div>
+        </nav>
+
         <div>
-        <img class="logo" src="img/logo.png" width="20%" height="auto"></div>
+            <img class="logo" src="img/logo.png" width="20%" height="auto"></div>
         <img class="content" src="img/Promotion.jpg">
         <img class="content" src="img/content1.jpg">
         <img class="content" src="img/content2.jpg">
@@ -182,10 +198,10 @@
                     <input type="text" placeholder="Enter Username" name="username">
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="password">
-                    <button type="submit">Login</button>                 
+                    <button type="submit" >Login</button>                 
                     <label><input type="checkbox" checked="checked" name="remember">Remember me </label>
                     <hr>
-                     <br><button type="button" onclick="doucument.location.href = RegistrationServlet">Sign Up</button>          
+                    <br><button type="button" onclick="doucument.location.href = RegistrationServlet">Sign Up</button>          
                     <br><button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
                     <span class="psw"  ><a href="#">Forget password?</a></span>
                 </div>
