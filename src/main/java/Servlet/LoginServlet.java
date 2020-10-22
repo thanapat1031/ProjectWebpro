@@ -43,7 +43,6 @@ public class LoginServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
-        //int customerNumber = Integer.parseInt(userName);
         Query qry = em.createNamedQuery("Customer.findByUserName");
         qry.setParameter("userName", userName);
         Customer c = (Customer) qry.getSingleResult();
