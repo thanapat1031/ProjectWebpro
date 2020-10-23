@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,19 +30,40 @@ public class RegistrationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        String cusname = request.getParameter("");
+        String username = request.getParameter("");
+        String password = request.getParameter("");
+        String checkpassword = request.getParameter("");
+        String email = request.getParameter("");
+        String tel = request.getParameter("");
+        
+        if(password.equals(checkpassword)){            
+            Customer customer = new Customer(Integer.SIZE, username, password, tel, email, tel);                   
+                }
+        else{
+            request.setAttribute("message","your password not correct Please try again");
+            
+        }
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegistrationServlet</title>");            
+            out.println("<title>Registration</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegistrationServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegistrationServlet at " + request.getContextPath() + "</h1>");            
+            out.println("<H3>User Info</H3><hr>");
+            out.println(email + "already for email");
+            out.println("Your email is : "+ email + "<br>");
+            out.println("Your user name is : "+ username + "<br>");
+            out.println("Your password is : "+ password + "<br>");
             out.println("</body>");
             out.println("</html>");
         }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,7 +78,7 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("/index.html").forward(request, response);
     }
 
     /**
