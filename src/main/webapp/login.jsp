@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
-    <jsp:include page="/index.html"/>
+    <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
     <body>
         <h1>${message}</h1>
     </body>

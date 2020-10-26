@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
         qry.setParameter("userName", userName);
         Customer c = (Customer) qry.getSingleResult();
         if (c != null && c.getPassWord().equals(password)) {
-            request.getRequestDispatcher("/index.html").forward(request, response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         } else {
             request.setAttribute("message", "Invalid User id or password");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -67,7 +67,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/index.html").forward(request, response);
+//        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     /**
