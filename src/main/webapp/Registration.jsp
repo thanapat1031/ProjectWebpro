@@ -26,7 +26,7 @@
     </head>
     <body>
 
-        <form class="modal-content" action="/action_page.php">
+        <form class="modal-content" action="Registration" method = "POST">
             <div class="container">
                 <h1>Sign Up</h1>
                 <hr>
@@ -38,7 +38,9 @@
                 <label for="email"><b>Username</b></label>
                 <input type="text" placeholder="your username" name="new_username" required>
                 <br>
-
+                <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="your address" name="new_address" required>
+                <br>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="new_password" required>

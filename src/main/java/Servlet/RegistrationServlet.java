@@ -6,8 +6,12 @@
 package Servlet;
 
 import entity.Customer;
+import entity.CustomerService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,19 +34,27 @@ public class RegistrationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cusname = request.getParameter("");
-        String username = request.getParameter("");
-        String password = request.getParameter("");
-        String checkpassword = request.getParameter("");
-        String email = request.getParameter("");
-        String tel = request.getParameter("");
+        String cusname = request.getParameter("new_name");
+        String username = request.getParameter("new_username");
+        String password = request.getParameter("new_password");
+        String checkpassword = request.getParameter("new_repassword");
+        String address = request.getParameter("new_address");
+        String email = request.getParameter("new_email");
+        String tel = request.getParameter("new_tel");
 
-        if (password.equals(checkpassword)) {
-            Customer customer = new Customer(Integer.SIZE, username, password, tel, email, tel);
-        } else {
-            request.setAttribute("message", "your password not correct Please try again");
-
+        //if (password.equals(checkpassword)) {
+            Customer customer = new Customer(2004, username, password, cusname, address, email, tel);
+            CustomerService customerservice = new CustomerService();
+            
+             try {
+            customerservice.insert(customer);
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistrationServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+       // } else {
+           // request.setAttribute("message", "your password not correct Please try again");
+
+        //}
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
