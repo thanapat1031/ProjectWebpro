@@ -1,5 +1,6 @@
 .bg {
     background-color: #F7DC6F;
+    /*    scroll-behavior: smooth;*/
 }
 .logo {
     display: block;
@@ -16,11 +17,11 @@
 }
 
 .content {
-/*    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    transition: transform .2s;*/
+    /*    display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    */    transition: transform .2s;
     width: 50%;
     height: auto;
 }

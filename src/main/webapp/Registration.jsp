@@ -33,6 +33,9 @@
                 <p>Please fill in this form to create an account.</p>
                 <hr>
                 <label for ="name"></label>
+                <input type="text" placeholder="customerId" name="cusId" required>
+                <br>
+                <label for ="name"></label>
                 <input type="text" placeholder="Name-Surname" name="new_name" required>
                 <br>
                 <label for="email"><b>Username</b></label>

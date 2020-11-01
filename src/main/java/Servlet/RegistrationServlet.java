@@ -6,7 +6,7 @@
 package Servlet;
 
 import entity.Customer;
-import entity.CustomerService;
+//import entity.CustomerService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -46,6 +46,7 @@ public class RegistrationServlet extends HttpServlet {
         String address = request.getParameter("new_address");
         String email = request.getParameter("new_email");
         String tel = request.getParameter("new_tel");
+        response.setContentType("text/html;charset=UTF-8");
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
@@ -54,7 +55,7 @@ public class RegistrationServlet extends HttpServlet {
         if (password.equals(checkpassword)) {
 //            Customer customer = new Customer(2004, username, password, cusname, address, email, tel);
 //            CustomerService customerservice = new CustomerService();
-
+      
             try {
                 em.createNativeQuery("Insert into Customer (customerId, username, password, customerName, address, email, tel) values"
                         + " (" + cusId + ",'" + username + "','" + password + "','" + cusname + "','" + address + "','" + email + "','" + tel + "')")
@@ -62,7 +63,6 @@ public class RegistrationServlet extends HttpServlet {
             } finally {
                 em.getTransaction().commit();
                 em.close();
-
             }
         } else {
             request.setAttribute("message", "your password not correct Please try again");

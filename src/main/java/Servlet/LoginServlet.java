@@ -47,6 +47,14 @@ public class LoginServlet extends HttpServlet {
         qry.setParameter("userName", userName);
         Customer c = (Customer) qry.getSingleResult();
         if (c != null && c.getPassWord().equals(password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", c);
+            Cookie ck1 = new Cookie("X1_US", userName);
+            Cookie ck2 = new Cookie("X1_UN", c.getCustomerName());
+            ck1.setMaxAge(60 * 60 * 24 * 7);
+            ck2.setMaxAge(60 * 60 * 24 * 7);
+            response.addCookie(ck1);
+            response.addCookie(ck2);
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         } else {
             request.setAttribute("message", "Invalid User id or password");

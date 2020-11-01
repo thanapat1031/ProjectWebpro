@@ -161,7 +161,7 @@
                 <a class="nav-link" href="category.jsp">Product<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">How To Use?</a>
+                <a class="nav-link" href="howToUse.jsp">How To Use?</a>
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
