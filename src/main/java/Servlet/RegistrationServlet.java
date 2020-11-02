@@ -10,6 +10,7 @@ import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -38,7 +39,7 @@ public class RegistrationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cusId = request.getParameter("cusId");
+//         String cusId = request.getParameter("cusId");
         String cusname = request.getParameter("new_name");
         String username = request.getParameter("new_username");
         String password = request.getParameter("new_password");
@@ -53,13 +54,12 @@ public class RegistrationServlet extends HttpServlet {
         em.getTransaction().begin();
 
         if (password.equals(checkpassword)) {
-//            Customer customer = new Customer(2004, username, password, cusname, address, email, tel);
-//            CustomerService customerservice = new CustomerService();
-      
+
             try {
                 em.createNativeQuery("Insert into Customer (customerId, username, password, customerName, address, email, tel) values"
-                        + " (" + cusId + ",'" + username + "','" + password + "','" + cusname + "','" + address + "','" + email + "','" + tel + "')")
+                        + " (" + Math.random()*9000+1000 + ",'" + username + "','" + password + "','" + cusname + "','" + address + "','" + email + "','" + tel + "')")
                         .executeUpdate();
+                
             } finally {
                 em.getTransaction().commit();
                 em.close();
@@ -87,7 +87,7 @@ public class RegistrationServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
