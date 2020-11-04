@@ -13,6 +13,7 @@
         <title>Product</title>
 
     </head>
+    
     <body class="bg">
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
 
@@ -21,31 +22,42 @@
         <div class="container" style="margin-right: 8%">
             <div class="row">
                 <div class="col">
-                    
-                    <a href="ProductList" ><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:23%; color: black">food</p></a>
+                    <label>
+                        <a href="ProductList_Food"><img src="img/category_food.png" width="200px" height="auto"/>
+                            <p style="text-align: center; color: black">food</p></a>
+                    </label>
                 </div>
                 <div class="col">
-                    <a href="C_bath.jsp"><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:15%; color: black">Bath Products</p></a>
+                    <label>
+                        <a href="ProductList_Bath"><img src="img/category_food.png" width="200px" height="auto"/>
+                            <p style="text-align: center; color: black">Bath Products</p></a>
+                    </label>
                 </div>
                 <div class="col">
-                    <a href="C_coupon.jsp"><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:21%; color: black">Coupon</p></a>
+                    <label>
+                    <a href="ProductList_Coupon"><img src="img/category_food.png" width="200px" height="auto"/>
+                        <p style="text-align: center; color: black">Coupon</p></a>
+                    </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4">
-                    <a href="C_goods.jsp"><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:12%; color: black">General Goods</p></a>
+                    <label>
+                    <a href="ProductList_Good"><img src="img/category_food.png" width="200px" height="auto"/>
+                        <p style="text-align: center; color: black">General Goods</p></a>
+                    </label>
                 </div>
                 <div class="col-4">
-                    <a href="C_kittens.jsp"><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:22%; color: black">Kittens</p></a>
+                    <label>
+                    <a href="ProductList_kitten"><img src="img/category_food.png" width="200px" height="auto"/>
+                        <p style="text-align: center; color: black">Kittens</p></a>
+                    </label>
                 </div>
                 <div class="col-4">
-                    <a href="C_vitamins.jsp"><img src="img/category_food.png" width="200px" height="auto"/>
-                        <p style="margin-left:5%; color: black">Vitamins & Supplements</p></a>
+                    <label>
+                    <a href="ProductList_Vitamin"><img src="img/category_food.png" width="200px" height="auto"/>
+                        <p style="text-align: center; color: black">Vitamins & Supplements</p></a>
+                    </label>
                 </div>
             </div>
         </div>

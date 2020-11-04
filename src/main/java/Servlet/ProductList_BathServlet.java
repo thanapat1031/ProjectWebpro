@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author User
  */
-public class ProductListServlet extends HttpServlet {
+public class ProductList_BathServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,35 +35,12 @@ public class ProductListServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//         String searchParam = request.getParameter("searchParam");
-//        if (searchParam == null || searchParam.trim().length() == 0) {
-//            request.setAttribute("message", "Pls enter part of product name");
-//            doGet(request, response);
-//            return;
-//        }
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("sit.int303.webpro_ClassicModelWebApp_war_1.0-SNAPSHOTPU");
-//        EntityManager em = emf.createEntityManager();
-//        String sql = "SELECT p FROM Product p WHERE p.productName like :pn OR p.productVendor like :pv";
-//        Query qry = em.createQuery(sql);
-//        qry.setParameter("pn", "%" + searchParam + "%");
-//        qry.setParameter("pv", "%" + searchParam + "%");
-//        List<Product> pd = qry.getResultList();
-//        request.setAttribute("products", pd);
-//        request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
-
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
+        EntityManager em = emf.createEntityManager();
+        Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1061 AND 1075");
+        List<Product> pdb = qry.getResultList();
+        request.setAttribute("productbath", pdb);
+        request.getRequestDispatcher("/C_bath.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

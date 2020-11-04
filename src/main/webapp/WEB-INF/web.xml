@@ -9,8 +9,32 @@
         <servlet-class>Servlet.RegistrationServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ProductListServlet</servlet-name>
-        <servlet-class>Servlet.ProductListServlet</servlet-class>
+        <servlet-name>VerifyServlet</servlet-name>
+        <servlet-class>Servlet.VerifyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_FoodServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_FoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_BathServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_BathServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_CouponServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_CouponServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_GoodServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_GoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_kittenServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_kittenServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductList_VitaminServlet</servlet-name>
+        <servlet-class>Servlet.ProductList_VitaminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -21,8 +45,32 @@
         <url-pattern>/Registration</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ProductListServlet</servlet-name>
-        <url-pattern>/ProductList</url-pattern>
+        <servlet-name>VerifyServlet</servlet-name>
+        <url-pattern>/Verify</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_FoodServlet</servlet-name>
+        <url-pattern>/ProductList_Food</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_BathServlet</servlet-name>
+        <url-pattern>/ProductList_Bath</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_CouponServlet</servlet-name>
+        <url-pattern>/ProductList_Coupon</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_GoodServlet</servlet-name>
+        <url-pattern>/ProductList_Good</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_kittenServlet</servlet-name>
+        <url-pattern>/ProductList_kitten</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductList_VitaminServlet</servlet-name>
+        <url-pattern>/ProductList_Vitamin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
