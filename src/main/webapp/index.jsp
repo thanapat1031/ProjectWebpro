@@ -26,7 +26,7 @@
 
         <div>
             <img class="logo" src="img/logo.png" width="20%" height="auto"></div>
-
+        <img src="img/promotion.gif" alt=""/>
         <div class="container" style="margin-right: 10%">
             <div class="row">
                 <div class="col">

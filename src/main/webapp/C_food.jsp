@@ -26,7 +26,7 @@
                 <c:forEach items="${product}" var="p">
                        <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">
-                            <img src="model-img/food/${p.productId}.jpeg" height="100" width="148"/>
+                            <img src="model-img/food/${p.productId}.jpg" height="100" width="148"/>
                         </div>
 <!--                        <div style="margin-top: -50">
                             <a href="AddItemToCart?productCode="><img src="img/cart-empty.jpg" height="25"/>
