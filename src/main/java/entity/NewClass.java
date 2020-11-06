@@ -20,10 +20,10 @@ public class NewClass {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        Query qry = em.createQuery("select p from Customer p");
-        List<Customer> customer = qry.getResultList();
-        for (Customer c : customer) {
-            System.out.printf("%-10d %s \n",c.getCustomerId(),c.getPassWord());
+        Query qry = em.createQuery("select p from Product p");
+        List<Product> pd = qry.getResultList();
+        for (Product p : pd) {
+            System.out.printf("%-10d %s \n",p.getProductId());
         }
         em.close();
     }
