@@ -76,7 +76,7 @@
   <div id="myDropdown" class="dropdown-content" >
     <a href="#home">History</a>
     <a href="#about">Update order</a>
-    <a href="#contact">Log out</a>
+    <a href="Logout">Log out</a>
   </div>
 </div>
 

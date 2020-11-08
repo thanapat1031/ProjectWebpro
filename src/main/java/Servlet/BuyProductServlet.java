@@ -5,15 +5,10 @@
  */
 package Servlet;
 
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author angelmungg
  */
-public class ProductListSearchServlet extends HttpServlet {
+@WebServlet(name = "BuyProductServlet", urlPatterns = {"/BuyProduct"})
+public class BuyProductServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,27 +31,12 @@ public class ProductListSearchServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String searchParam = request.getParameter("searchParam");
-        if (searchParam == null || searchParam.trim().length() == 0) {
-            request.setAttribute("message", "Please enter your product name");           
-            doGet(request, response);
-           return;
-           
-        }
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-        String sql = "SELECT p FROM Product p WHERE p.productName like :pn OR p.productDescription like :pv";
-        Query qry = em.createQuery(sql);
-        qry.setParameter("pn", "%" + searchParam + "%");
-        qry.setParameter("pv", "%" + searchParam + "%");
-        List<Product> pd = qry.getResultList();
-        request.setAttribute("products", pd);
-        request.getRequestDispatcher("/category.jsp").forward(request, response);
-
+        
+        
+        
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -67,7 +48,7 @@ public class ProductListSearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/category.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

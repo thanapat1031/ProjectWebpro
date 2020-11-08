@@ -165,8 +165,8 @@
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <form action="ProductListSearch" method="">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="ProductListSearch" method="POST">
+                <input class="form-control mr-sm-2" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
                 <input type="submit" name="submit" value="Search">
             </form>
             <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>

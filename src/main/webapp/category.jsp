@@ -63,6 +63,22 @@
                 </div>
             </div>
         </div>
+        
+         <c:forEach items="${products}" var="p" varStatus="vs">
+                    <div class="col-2 border border-primary rounded mx-2 my-3">
+                        <div class="img-thumbnail border-0">
+                            <img src="model-img/food/${p.productId}.jpg" height="100" width="148"/>
+                            <!--<img src="model-img/food/1001.jpg" height="100" width="148"/>-->
+                        </div>
+                      
+                        
+<!--                        <div style="margin-top: -50">
+                            <a href="AddItemToCart?productCode=${p.productCode}"><img src="img/cart-empty.jpg" height="25"/>
+                        </div>-->
+
+                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productName}</div>
+                    </div>
+                </c:forEach>
 
 
     </body>
