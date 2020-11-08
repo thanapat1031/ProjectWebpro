@@ -12,6 +12,7 @@
         <title>Category : kitten</title>
     </head>
     <body>
+        <jsp:include page="/category.jsp"/>
         <div class="container-fluid">
             <div class="row rounded border badge-warning p-4 pt-2 pb-2">
                 <div class="col-2">
@@ -25,7 +26,7 @@
                 <c:forEach items="${product}" var="p">
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">
-                            <img src="model-img/food/${p.productId}.jpeg" height="100" width="148"/>
+                            <img src="model-img/nutrition/${p.productId}.jpeg" height="100" width="148"/>
                         </div>
                         <!--                        <div style="margin-top: -50">
                                                     <a href="AddItemToCart?productCode="><img src="img/cart-empty.jpg" height="25"/>
