@@ -26,13 +26,13 @@
                 <div class="col">
                     <label>
                         <a href="ProductList?Food_pd=1"><img src="img/cat-food.png" width="200px" height="auto"/>
-                            <p style="text-align: center; color: black">food</p></a>
+                            <p style="text-align: center; color: black">Food</p></a>
                     </label>
                 </div>
                 <div class="col">
                     <label>
                         <a href="ProductList?Bath_pd="bath"><img src="img/soap.png" width="200px" height="auto"/>
-                        <p style="text-align: center; color: black">Bath Products</p></a>
+                        <p style="text-align: center; color: black">Cleaning</p></a>
                     </label>
                 </div>
                 <div class="col">
@@ -46,19 +46,19 @@
                 <div class="col-4">
                     <label>
                     <a href="ProductList?Good_pd='good'"><img src="img/ball.png"  width="200px" height="auto"/>
-                        <p style="text-align: center; color: black">General Goods</p></a>
+                        <p style="text-align: center; color: black">Litter & Accessories</p></a>
                     </label>
                 </div>
                 <div class="col-4">
                     <label>
                     <a href="ProductList_kitten?Kitten_pd='kitten'"><img src="img/cage.png"  width="200px" height="auto"/>
-                        <p style="text-align: center; color: black">Kittens</p></a>
+                        <p style="text-align: center; color: black">Crates & Gates</p></a>
                     </label>
                 </div>
                 <div class="col-4">
                     <label>
                     <a href="ProductList_Vitamin?Vitamin_pd='vitamin'"><img src="img/milk.png"  width="200px" height="auto"/>
-                        <p style="text-align: center; color: black">Vitamins & Supplements</p></a>
+                        <p style="text-align: center; color: black">Treats & milk</p></a>
                     </label>
                 </div>
             </div>
