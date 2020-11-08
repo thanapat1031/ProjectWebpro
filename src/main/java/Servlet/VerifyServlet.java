@@ -5,14 +5,8 @@
  */
 package Servlet;
 
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author User
  */
-public class ProductList_CouponServlet extends HttpServlet {
+public class VerifyServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +29,19 @@ public class ProductList_CouponServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-        Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1076 AND 1090");
-        List<Product> pd = qry.getResultList();
-        request.setAttribute("product", pd);
-        request.getRequestDispatcher("/C_coupon.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet VerifyServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet VerifyServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Category : Coupon</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -22,6 +22,7 @@
                 </div>
             </div>
             <div class="row ml-3">
+                 <h1>${message}</h1>
                 <c:forEach items="${product2}" var="p">
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">

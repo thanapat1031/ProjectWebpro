@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author User
  */
-public class ProductList_BathServlet extends HttpServlet {
+public class ProductListServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +35,32 @@ public class ProductList_BathServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String food = request.getParameter(getInitParameter("Food_pd"));
+        String bath = request.getParameter("Bath_pd");
+        String coupon = request.getParameter("Coupon_pd");
+        String good = request.getParameter("Good_pd");
+        String vitamin = request.getParameter("Vitamin_pd");
+        String kitten = request.getParameter("Kitten_pd");
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1061 AND 1075");
-        List<Product> pdb = qry.getResultList();
-        request.setAttribute("productbath", pdb);
-        request.getRequestDispatcher("/C_bath.jsp").forward(request, response);
-    }
+
+        if (food == 1) {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1001 AND 1015");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("product", pd);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
+        }else if (bath.equals(bath)) {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1061 AND 1075");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("productbath", pd);
+            request.getRequestDispatcher("/C_bath.jsp").forward(request, response);
+        }else
+            request.setAttribute("message", "You are Win");
+            request.getRequestDispatcher("/C_coupon.jsp").forward(request, response);
+            return;
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
