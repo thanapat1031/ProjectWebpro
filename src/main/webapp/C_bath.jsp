@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Category : Bath</title>
+        <title>Category : Cleaning</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="row ml-3">
-                <c:forEach items="${productbath}" var="p">
+                <c:forEach items="${product}" var="p">
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">
                             <img src="model-img/food/${p.productId}.jpg" height="100" width="148"/>

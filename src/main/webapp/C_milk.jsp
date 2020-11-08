@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Category : vitamin</title>
+        <title>Category : Treats & milk</title>
     </head>
     <body>
         <div class="container-fluid">

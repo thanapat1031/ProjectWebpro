@@ -35,32 +35,45 @@ public class ProductListServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String food = request.getParameter(getInitParameter("Food_pd"));
-        String bath = request.getParameter("Bath_pd");
-        String coupon = request.getParameter("Coupon_pd");
-        String good = request.getParameter("Good_pd");
-        String vitamin = request.getParameter("Vitamin_pd");
-        String kitten = request.getParameter("Kitten_pd");
+        String typeParam = request.getParameter("type");
+        int type = Integer.parseInt(typeParam);
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
 
-        if (food == 1) {
+        if (type == 1) {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1001 AND 1015");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
             request.getRequestDispatcher("/C_food.jsp").forward(request, response);
-        }else if (bath.equals(bath)) {
+        } else if (type == 2) {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1016 AND 1030");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("product", pd);
+            request.getRequestDispatcher("/C_milk.jsp").forward(request, response);
+        } else if (type == 3) {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1031 AND 1045");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("product", pd);
+            request.getRequestDispatcher("/C_toy.jsp").forward(request, response);
+        } else if (type == 4) {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1046 AND 1060");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("product", pd);
+            request.getRequestDispatcher("/C_cage.jsp").forward(request, response);
+        } else if (type == 5) {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1061 AND 1075");
             List<Product> pd = qry.getResultList();
-            request.setAttribute("productbath", pd);
+            request.setAttribute("product", pd);
             request.getRequestDispatcher("/C_bath.jsp").forward(request, response);
-        }else
-            request.setAttribute("message", "You are Win");
+        } else {
+            Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1076 AND 1090");
+            List<Product> pd = qry.getResultList();
+            request.setAttribute("product", pd);
             request.getRequestDispatcher("/C_coupon.jsp").forward(request, response);
-            return;
         }
-    
+        return;
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
