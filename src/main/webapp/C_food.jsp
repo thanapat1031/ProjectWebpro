@@ -40,22 +40,21 @@
                 <c:forEach items="${product}" var="p">
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">
-                            <img src="model-img/food/${p.productId}.jpg" height="100" width="148"/>
+                            <img src="model-img/food/${p.productId}.jpg" height="100" width="auto"/>
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">${p.productName}</h4>
-                            <p class="card-text">${p.productPrice}</p>
-                            <a href="#" data-name="Orange" data-price="0.5" class="add-to-cart btn btn-primary">Add to cart</a>
+                            <p class="card-text">${p.productPrice}  BAHT
+                            <a href="BuyProduct" class="add-to-cart btn btn-primary">
+                                <img src="img/cart.png" width="30px" height="auto"/> </a> </p>
                         </div>
-                        <!--                        <div style="margin-top: -50">
-                                                    <a href="AddItemToCart?productCode="><img src="img/cart-empty.jpg" height="25"/>
-                                                </div>-->
+                       
 
                         <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productDescription}</div>
                     </div>
 
 
-                    <!--<img src="model-img/food/.jpeg" width="200" height="auto"/>-->
+                    
                 </c:forEach>
 
 

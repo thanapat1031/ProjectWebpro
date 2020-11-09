@@ -163,8 +163,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="howToUse.jsp">How To Use?</a>
             </li>
+        
         </ul>
+        
         <div class="form-inline my-2 my-lg-0">
+               
             <form action="ProductListSearch" method="POST">
                 <input class="form-control mr-sm-2" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
                 <input type="submit" name="submit" value="Search">
@@ -179,6 +182,7 @@
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username">
             <label for="psw"><b>Password</b></label>
+          
             <input type="password" placeholder="Enter Password" name="password">
             <button type="submit" onclick="form.action = 'Login';" >Login</button>                 
             <label><input type="checkbox" checked="checked" name="remember">Remember me </label>
