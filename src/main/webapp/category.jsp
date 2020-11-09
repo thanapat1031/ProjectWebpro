@@ -21,7 +21,7 @@
         <h1 style="text-align: center;">Category</h1>
 
 
-
+ 
         <div class="container" style="margin-right: 1%">
             <div class="row">
                 <div class="col">
@@ -69,11 +69,13 @@
         <div class="col-2 border border-primary rounded mx-2 my-3">
             <div class="img-thumbnail border-0">
                 <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="148"/>
-            
+           
+                             
             </div>
-
             <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productName}</div>
+       
         </div>
+        
     </c:forEach>
 
 

@@ -51,27 +51,27 @@ public class ProductListServlet extends HttpServlet {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1016 AND 1030");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
-            request.getRequestDispatcher("/C_milk.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
         } else if (type == 3) {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1031 AND 1045");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
-            request.getRequestDispatcher("/C_toy.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
         } else if (type == 4) {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1046 AND 1060");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
-            request.getRequestDispatcher("/C_cage.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
         } else if (type == 5) {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1061 AND 1075");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
-            request.getRequestDispatcher("/C_bath.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
         } else {
             Query qry = em.createQuery("SELECT p FROM Product p WHERE p.productId BETWEEN 1076 AND 1090");
             List<Product> pd = qry.getResultList();
             request.setAttribute("product", pd);
-            request.getRequestDispatcher("/C_coupon.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
         }
         return;
     }

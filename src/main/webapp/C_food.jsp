@@ -40,7 +40,7 @@
                 <c:forEach items="${product}" var="p">
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <div class="img-thumbnail border-0">
-                            <img src="model-img/food/${p.productId}.jpg" height="100" width="auto"/>
+                            <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto"/>
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">${p.productName}</h4>
