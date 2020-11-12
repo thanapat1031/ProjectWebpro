@@ -51,6 +51,7 @@ public class ProductListSearchServlet extends HttpServlet {
         qry.setParameter("pv", "%" + searchParam + "%");
         List<Product> pd = qry.getResultList();
         request.setAttribute("products", pd);
+        
         request.getRequestDispatcher("/category.jsp").forward(request, response);
 
     }

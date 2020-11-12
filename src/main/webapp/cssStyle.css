@@ -22,8 +22,8 @@
         margin-right: auto;
         padding: 10px;
     */    transition: transform .2s;
-    width: 50%;
-    height: auto;
+/*    width: 10000px;
+    height: auto;*/
 }
 
 .content:hover {

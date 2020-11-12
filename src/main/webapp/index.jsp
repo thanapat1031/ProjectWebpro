@@ -25,25 +25,18 @@
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
 
         <div>
-            <img class="logo" src="img/logo.png" width="20%" height="auto"></div>
+            <img class="logo" src="img/logo.png" width="15%" height="auto"></div>
         <img src="img/promotion.gif" alt=""/>
         <div class="container" style="margin-right: 10%">
             <div class="row">
                 <div class="col">
-                    <a href=""><img class="content" src="img/Promotion.jpg"></a>
+                    <a href="ProductList?type=2"><img class="logo" src="img/saleroyale.jpg" width="80%" height="auto" ></a>
                 </div>
                 <div class="col">
-                    <img class="content" src="img/content1.jpg">
+                     <a href="ProductList?type=3"><img class="logo" src="img/salecondo.webp"width="80%" height="auto"  ></a>
                 </div>
-
-            </div>
-            <div class="row">
-                <div class="col">
-                    <img class="content" src="img/content2.jpg">
-                </div>
-                <div class="col">
-                    <img class="content" src="img/content3.jpg">
-                </div>
+               
+          
                 </body>
                 </html>
 

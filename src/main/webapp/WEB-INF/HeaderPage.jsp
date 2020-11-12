@@ -171,6 +171,7 @@
             <form action="ProductListSearch" method="POST">
                 <input class="form-control mr-sm" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
                 <input type="submit" name="submit" value="Search">
+                <img src="../img/magnifier.png" alt=""/>
             </form>
             <div style="margin-left: 20px">
                 <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>
