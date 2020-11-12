@@ -65,6 +65,7 @@
                 <a class="nav-link" href="#">How To Use?</a>
             </li>
         </ul>
+        <a href="ViewCart">Cart</a>
         <div class="form-inline my-2 my-lg-0">
             <!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
               

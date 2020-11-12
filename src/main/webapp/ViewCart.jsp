@@ -22,46 +22,25 @@
 
         <title>Category : cage</title>
         <style>.button1 {background-color: #4CAF50;} 
-.button2 {background-color: red;} </style>
+            .button2 {background-color: red;} </style>
     </head>
     <body>
+        <jsp:include page="/WEB-INF/HeaderMember.jsp" />
+    <from method = "post" action = "purchase">
 
-        <jsp:include page="/WEB-INF/HeaderPage.jsp" />
-
-        <div class="row">
-            <table class="table table-bordered">
+        <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">  
+            <tbody>
                 <tr>
-                    <td>No</td>
-                    <td>Description</td>
-
-                    <td>Price</td>
-                    <td>Total</td>
-                    <td>Delete or addddd</td>
+                    <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId}/${lineItem.product.productId}.jpg" alt="product img"/></td>
+                    <td class="product-name">${lineItem.product.productName}</td>
+                    <td class="product-price"><span class="amount">${lineItem.price} BATH</span></td>
+                    <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"><button type="submit">add</button> </td>
+                    <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
+                    <td class="product-remove"><a href="${lineItem.product.productId}">X</a></td>
                 </tr>
-                <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
-                    <tr>
-                        <td>${vs.count}</td>
-
-
-                        >
-                        <td>${lineItem.price}</td>
-                        <td>${lineItem.totalPrice}</td>
-                        <td><input type="checkbox" name="del_${lineItem.product.productCode}"/>
-                            
-                    </tr>
-                </c:forEach>
-                <tr>
-                    <td colspan="2"></td>
-                    <td></td>
-                    
-
-                    <td><fmt:formatNumber pattern="#,###.00" value="${cart.totalPrice}"/></td>
-        <td><button class="button button2">delete</button>
-        <button class="button button1">add</button></td>
-                </tr>
-            </table>
-        </div>
-  
-             
-    </body>
+            </tbody>
+        </c:forEach>
+        <button type="summit">confirm</button>
+    </form>                                      
+</body>
 </html>

@@ -163,16 +163,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="howToUse.jsp">How To Use?</a>
             </li>
-        
+                
         </ul>
         
         <div class="form-inline my-2 my-lg-0">
                
             <form action="ProductListSearch" method="POST">
-                <input class="form-control mr-sm-2" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
+                <input class="form-control mr-sm" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
                 <input type="submit" name="submit" value="Search">
             </form>
-            <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>
+            <div style="margin-left: 20px">
+                <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>
+            </div>
         </div>
     </div>
 </nav>
@@ -187,7 +189,10 @@
             <button type="submit" onclick="form.action = 'Login';" >Login</button>                 
             <label><input type="checkbox" checked="checked" name="remember">Remember me </label>
             <hr>
-            <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          
+            <br><a href="Registration.jsp"><button type="button">
+                    Sign Up
+                </button></a>
+            <!--            <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          -->
             <br><button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
             <span class="psw"><a href="#">Forget password?</a></span>
         </div>

@@ -38,10 +38,10 @@ public class ProductListSearchServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String searchParam = request.getParameter("searchParam");
         if (searchParam == null || searchParam.trim().length() == 0) {
-            request.setAttribute("message", "Please enter your product name");           
+            request.setAttribute("message", "Please enter your product name");
             doGet(request, response);
-           return;
-           
+            return;
+
         }
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
@@ -81,6 +81,9 @@ public class ProductListSearchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         processRequest(request, response);
     }
 

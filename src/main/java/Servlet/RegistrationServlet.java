@@ -39,7 +39,7 @@ public class RegistrationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//         String cusId = request.getParameter("cusId");
+
         String cusname = request.getParameter("new_name");
         String username = request.getParameter("new_username");
         String password = request.getParameter("new_password");
@@ -57,9 +57,9 @@ public class RegistrationServlet extends HttpServlet {
 
             try {
                 em.createNativeQuery("Insert into Customer (customerId, username, password, customerName, address, email, tel) values"
-                        + " (" + Math.random()*9000+1000 + ",'" + username + "','" + password + "','" + cusname + "','" + address + "','" + email + "','" + tel + "')")
+                        + " (" + Math.random() * 9000 + 1000 + ",'" + username + "','" + password + "','" + cusname + "','" + address + "','" + email + "','" + tel + "')")
                         .executeUpdate();
-                
+
             } finally {
                 em.getTransaction().commit();
                 em.close();
@@ -113,6 +113,9 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
         processRequest(request, response);
     }
 

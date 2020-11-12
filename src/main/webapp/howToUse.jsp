@@ -21,11 +21,16 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
         <title>Category : cage</title>
+        <style>
+            body{
+                background-image: url('img/howtouse1.jpg');
+            }
+        </style>
     </head>
     <body>
 
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
-        <img src="img/howtouse1.jpg" alt="" width="1350px" height="auto"/>
+        <!--<img src="img/howtouse1.jpg" alt="" width="1350px" height="auto"/>-->
         <h1></h1>
     </body>
 </html>
