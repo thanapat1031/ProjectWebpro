@@ -37,7 +37,7 @@
                     <td>Total</td>
                     <td>Delete</td>
                 </tr>
-                <from method = "post" action = "ViewCart">
+                <form method = "post" action = "ViewCart">
                     <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
                         <tbody>
                             <tr>
@@ -48,12 +48,12 @@
                                 <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"> </td>
 
                                 <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                                <td class="product-remove"><a href="RemoveItemToCart?eachItem=${lineItem.product.productId}">X</a></td>
+                                <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
                             </tr>
                         </tbody>
                     </c:forEach>
                     <button type="summit">confirm</button>
-                    </form>
+                </form>
 
-                    </body>
-                    </html>
+                </body>
+                </html>

@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -157,30 +158,31 @@
         <a class="navbar-brand" href="index.jsp">
             <img src="img/logo.png" width="60" height="auto"/>Meow Meow</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="navbar-light ">
-                <a class="nav-link" href="category.jsp" >Product<span class="sr-only"></span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="category.jsp">Product<span class="sr-only"></span></a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item">
                 <a class="nav-link" href="howToUse.jsp">How To Use?</a>
             </li>
-                
+
         </ul>
         <div style="margin-right: 20px">
-           
-        <a href="ViewCart"><img src="img/shopping-basket.png"height="35 " /></a>(${cart.itemCount})
-        </div>
+
+            <a href="ViewCart"><img src="img/shopping-basket.png"height="35 " /></a>(${cart.itemCount})
+        </div>  
         <div class="form-inline my-2 my-lg-0">
-            
+
             <form action="ProductListSearch" method="POST">
-                <input class="form-control mr-sm" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
-                <input class="btn btn-outline-success my-2"  type="submit" name="submit" value="Search">
-                
+                <input class="form-control mr-sm-2" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
+                <input type="submit" name="submit" value="Search">
             </form>
-            <div style="margin-left: 20px">
-                <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>
-            </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">${user==null? 'Login' : 'Logout'}</button>
         </div>
+        Hello,${user==null?'Guest':user.userName}
     </div>
+</div>
+</nav>
+
 </nav>
 <div id="id01" class="modal">
     <form class="modal-content animate" action="Login" method="post">
@@ -188,15 +190,12 @@
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username">
             <label for="psw"><b>Password</b></label>
-          
+
             <input type="password" placeholder="Enter Password" name="password">
             <button type="submit" onclick="form.action = 'Login';" >Login</button>                 
             <label><input type="checkbox" checked="checked" name="remember">Remember me </label>
             <hr>
-            <br><a href="Registration.jsp"><button type="button">
-                    Sign Up
-                </button></a>
-            <!--            <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          -->
+            <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          
             <br><button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
             <span class="psw"><a href="#">Forget password?</a></span>
         </div>
@@ -212,4 +211,7 @@
             modal.style.display = "none";
         }
     }
+
+
+
 </script>
