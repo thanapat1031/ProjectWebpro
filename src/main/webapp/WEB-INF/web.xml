@@ -32,6 +32,18 @@
         <servlet-name>RemoveServlet</servlet-name>
         <servlet-class>Servlet.RemoveServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddMoreServlet</servlet-name>
+        <servlet-class>Servlet.AddMoreServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <servlet-class>Servlet.PurchaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmServlet</servlet-name>
+        <servlet-class>Servlet.ConfirmServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -63,6 +75,18 @@
     <servlet-mapping>
         <servlet-name>RemoveServlet</servlet-name>
         <url-pattern>/Remove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddMoreServlet</servlet-name>
+        <url-pattern>/AddMore</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <url-pattern>/PurchaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmServlet</servlet-name>
+        <url-pattern>/Confirm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

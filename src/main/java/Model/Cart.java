@@ -18,67 +18,74 @@ import java.util.Map;
  * @author angelmungg
  */
 public class Cart {
-    private Map<Integer, LineItem> map ;
+
+    private Map<Integer, LineItem> map;
 
     public Cart() {
         map = new HashMap(32);
     }
-    
+
     public void add(Product product) {
         add(product, 1);
     }
-    
+
     public void add(Product product, int quantity) {
-       
+
         LineItem item = map.get(product.getProductId());
         if (item == null) {
-            map.put(product.getProductId(), 
-                    new LineItem(product, quantity, product.getProductId()));
+            map.put(product.getProductId(),
+                    new LineItem(product, quantity, product.getProductPrice()));
         } else {
-            item.setQuantity(item.getQuantity()+quantity);
+            item.setQuantity(item.getQuantity() + quantity);
         }
     }
 
-    
+    public void update(int productid, int quantity) {
+        LineItem item = map.get(productid);
+        item.setQuantity(quantity);
+    }
+
     public void remove(int productId) {
         map.remove(productId);
     }
-    
+
     public int getItemCount() {
         return map.size();
     }
-    
+
     public List<LineItem> getItems() {
         List<LineItem> lineItems = new ArrayList(map.values());
         return Collections.unmodifiableList(lineItems);
     }
-    
+
     public double getTotalPrice() {
         double total = 0;
         for (LineItem lineItem : map.values()) {
             total = total + lineItem.getTotalPrice();
         }
-        return total ;
+        return total;
     }
-    
+
     public static class LineItem {
-        private Product product ;
-        private int quantity ;
+
+        private Product product;
+        private int quantity;
         private double price;
 
         public LineItem(Product product, double price) {
             this(product, 1, price);
         }
-        
+
         public LineItem(Product product, int quantity, double price) {
             this.product = product;
             this.quantity = quantity;
             this.price = price;
         }
+
         public double getTotalPrice() {   // EL ${pl.totalPrice}
             return quantity * price;
         }
-        
+
         public Product getProduct() {
             return product;
         }
@@ -102,10 +109,7 @@ public class Cart {
         public void setPrice(double price) {
             this.price = price;
         }
-        
 
     }
-    
-  
-    
+
 }

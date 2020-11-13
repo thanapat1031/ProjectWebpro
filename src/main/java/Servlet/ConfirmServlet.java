@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author User
  */
-public class RemoveServlet extends HttpServlet {
+public class ConfirmServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,23 +30,22 @@ public class RemoveServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String remove = request.getParameter("remove");
-        int productId = Integer.parseInt(remove);
-
-        HttpSession session = request.getSession(true);
+           throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
         Cart cart = (Cart) session.getAttribute("cart");
-        cart.remove(productId);
-        if (cart.getItemCount() == 0) {
-
-            request.getRequestDispatcher("/category.jsp").forward(request, response);
-        }
-
-        request.getRequestDispatcher("/ViewCart.jsp").forward(request, response);
-
+        if (session == null || cart == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Session not available");
+            return;
+        }     
+         
+        
+        session.setAttribute("cart", cart);
+  
+        request.getRequestDispatcher("/Purchase.jsp").forward(request, response);
+    
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

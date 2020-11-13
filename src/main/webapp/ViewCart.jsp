@@ -22,38 +22,49 @@
 
         <title>Category : cage</title>
         <style>.button1 {background-color: #4CAF50;} 
-            .button2 {background-color: red;} </style>
+            .button2 {background-color: red;} 
+        </style>
     </head>
     <body>
-        <jsp:include page="/WEB-INF/HeaderMember.jsp" />
-    <from method = "post" action = "purchase">
+        <jsp:include page="/WEB-INF/HeaderMember.jsp"/>
+        <!--<from method = "post" action = "purchase">-->
+
         <div class="row">
-            <table class="table table-bordered">
+
+            <table class="table table-bordered" style="margin-left: 20%">
                 <tr>
                     <td>No</td>
-                    <td>Description</td>
-                    <td>Quantity</td>
+                    <td>Product</td>
+                    <td>Name</td>
                     <td>Price</td>
+                    <td>Quantity</td>
                     <td>Total</td>
                     <td>Delete</td>
                 </tr>
-                <form method = "post" action = "ViewCart">
-                    <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
-                        <tbody>
-                            <tr>
-                                <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" alt="product img"/></td>
-                                <td class="product-name">${lineItem.product.productName}</a></td>
-                                <td class="product-price"><span class="amount">${lineItem.price} BATH</span></td>
+                <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
+                    <tbody>
+                        <tr>
+                            <td>${vs.count}</td>
+                            <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" width="200px" height="auto" alt="product img"/></td>
+                            <td class="product-name">${lineItem.product.productName}</a></td>
+                            <td class="product-price"><span class="amount">${lineItem.product.productPrice} BATH</span></td>
+                    <form action="ViewCart?productid=${lineItem.product.productId}" method="POST">
+                        <td><input type="number" name="quantity" value="${lineItem.quantity}" "min="1" max="99">
+                            <button type="submit">update</button>
+                        </td>
+                    </form>
 
-                                <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"> </td>
+                    <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
+                    <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
 
-                                <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                                <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
-                            </tr>
-                        </tbody>
-                    </c:forEach>
-                    <button type="summit">confirm</button>
-                </form>
 
-                </body>
-                </html>
+                    </tbody>
+                </c:forEach>
+                </tr>
+                <tr><td colspan='6'>
+                    <td><a href="Confirm";">Purchase</a></tr>
+                </form
+            </table>
+        </div>
+    </body>
+</html>

@@ -60,7 +60,7 @@ public class BuyProductServlet extends HttpServlet {
             }
             cart.add(p);
         }
-        request.getRequestDispatcher("/category.jsp").forward(request, response);
+        request.getRequestDispatcher("/C_food.jsp").forward(request, response);
     }
 //    
 //  

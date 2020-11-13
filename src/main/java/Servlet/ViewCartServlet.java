@@ -6,6 +6,7 @@
 package Servlet;
 //
 
+import Model.Cart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -67,10 +68,20 @@ public class ViewCartServlet extends HttpServlet {
 //     */
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+   
+            protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String quan = request.getParameter("quantity");
+        int quantity = Integer.parseInt(quan);
+        String productId = request.getParameter("productid");
+        int  id = Integer.parseInt(productId);
+        HttpSession session = request.getSession();
+        Cart c = (Cart)session.getAttribute("cart");
+        c.update(id, quantity);
+        request.getRequestDispatcher("ViewCart.jsp").forward(request, response);
+    
     }
+            
 //
 //    /**
 //     * Returns a short description of the servlet.
