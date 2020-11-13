@@ -6,6 +6,7 @@
 package Model;
 
 import entity.Product;
+import static entity.Product_.productId;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @author angelmungg
  */
 public class Cart {
-    private Map<String, LineItem> map ;
+    private Map<Integer, LineItem> map ;
 
     public Cart() {
         map = new HashMap(32);
@@ -28,20 +29,19 @@ public class Cart {
     }
     
     public void add(Product product, int quantity) {
+       
         LineItem item = map.get(product.getProductId());
         if (item == null) {
-            map.put(product.getProductName(), 
+            map.put(product.getProductId(), 
                     new LineItem(product, quantity, product.getProductId()));
         } else {
             item.setQuantity(item.getQuantity()+quantity);
         }
     }
-   // public void remove(Product product) {
-     //   remove(product.getProductId());
-    //}
+
     
-    public void remove(String productCode) {
-        map.remove(productCode);
+    public void remove(int productId) {
+        map.remove(productId);
     }
     
     public int getItemCount() {
