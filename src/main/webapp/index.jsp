@@ -22,7 +22,7 @@
 
     </head>
     <body class="bg">
-        <jsp:include page="/WEB-INF/HeaderPage.jsp" />
+        <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
 
         <div>
             <img class="logo" src="img/logo.png" width="15%" height="auto"></div>

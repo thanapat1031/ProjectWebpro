@@ -1,6 +1,6 @@
 .bg {
     background-color: #F7DC6F;
-    /*    scroll-behavior: smooth;*/
+        scroll-behavior: smooth;
 }
 .logo {
     display: block;

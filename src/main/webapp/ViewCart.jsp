@@ -48,7 +48,7 @@
                                 <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"> </td>
 
                                 <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                                <td class="product-remove"><a href="RemoveItemToCart?eachItem=${lineItem.product.productid}">X</a></td>
+                                <td class="product-remove"><a href="RemoveItemToCart?eachItem=${lineItem.product.productId}">X</a></td>
                             </tr>
                         </tbody>
                     </c:forEach>

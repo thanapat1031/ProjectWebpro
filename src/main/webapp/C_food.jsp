@@ -46,9 +46,7 @@
                         </div></a>
                         <div class="card-block">
                             <p class="card-text">${p.productPrice}  BAHT
-                                 
-                                <a href="BuyProduct?value=${p.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
-                   
+                                <a href="BuyProduct?productId=${p.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
                         </div>
                         <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productDescription}</div>
                    </label> 

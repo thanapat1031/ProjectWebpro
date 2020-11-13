@@ -167,7 +167,7 @@
         </ul>
         <div style="margin-right: 20px">
            
-        <a href="ViewCart"><img src="img/shopping-basket.png"height="35" /></a>(${cart.itemCount})
+        <a href="ViewCart"><img src="img/shopping-basket.png"height="35 " /></a>(${cart.itemCount})
         </div>
         <div class="form-inline my-2 my-lg-0">
             

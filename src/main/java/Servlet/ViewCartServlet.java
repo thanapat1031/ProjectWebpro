@@ -5,6 +5,7 @@
 // */
 package Servlet;
 //
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpSession;
 // *
 // * @author angelmungg
 // */
+
 public class ViewCartServlet extends HttpServlet {
 //
 //    /**
@@ -28,16 +30,16 @@ public class ViewCartServlet extends HttpServlet {
 //     * @throws ServletException if a servlet-specific error occurs
 //     * @throws IOException if an I/O error occurs
 //     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         HttpSession session = request.getSession(false);
-        if(session == null || session.getAttribute("cart")==null){
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Session not available");
-        return;
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("cart") == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Session not available");
+            return;
         }
         request.getRequestDispatcher("/ViewCart.jsp").forward(request, response);
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 //    /**
@@ -51,7 +53,8 @@ public class ViewCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.sendRedirect("/category.jsp");
+        processRequest(request, response);
+//        request.getRequestDispatcher("/category.jsp").forward(request, response);
     }
 //
 //    /**
@@ -62,6 +65,7 @@ public class ViewCartServlet extends HttpServlet {
 //     * @throws ServletException if a servlet-specific error occurs
 //     * @throws IOException if an I/O error occurs
 //     */
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,6 +77,7 @@ public class ViewCartServlet extends HttpServlet {
 //     *
 //     * @return a String containing servlet description
 //     */
+
     @Override
     public String getServletInfo() {
         return "Short description";

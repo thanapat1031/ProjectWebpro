@@ -39,10 +39,10 @@ public class BuyProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String productId = request.getParameter("value");
+        String productId = request.getParameter("productId");
         int value = Integer.parseInt(productId);
 
-        if (value == 0 || value > 1001 || value < 1090) {
+        if (value == 0 || value < 1001 || value > 1090) {
 
             request.getRequestDispatcher("/category.jsp").forward(request, response);
             return;
@@ -63,7 +63,7 @@ public class BuyProductServlet extends HttpServlet {
         request.getRequestDispatcher("/category.jsp").forward(request, response);
     }
 //    
-//
+//  
 //    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 //    /**
 //     * Handles the HTTP <code>GET</code> method.
@@ -94,7 +94,6 @@ public class BuyProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        request.getRequestDispatcher("howToUse.jsp").forward(request, response);
     }
 //
 //    /**
