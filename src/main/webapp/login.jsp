@@ -11,8 +11,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
+    
     <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
     <body>
-        <h1>${message}</h1>
+        <h1>${message}
+            <img src="img/200.gif" alt=""/>
+        </h1>
     </body>
 </html>

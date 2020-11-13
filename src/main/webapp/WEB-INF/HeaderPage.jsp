@@ -157,21 +157,24 @@
         <a class="navbar-brand" href="index.jsp">
             <img src="img/logo.png" width="60" height="auto"/>Meow Meow</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="category.jsp">Product<span class="sr-only"></span></a>
+            <li class="navbar-light ">
+                <a class="nav-link" href="category.jsp" >Product<span class="sr-only"></span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link" href="howToUse.jsp">How To Use?</a>
             </li>
                 
         </ul>
-        
+        <div style="margin-right: 20px">
+           
+        <a href="ViewCart"><img src="img/shopping-basket.png"height="35" /></a>(${cart.itemCount})
+        </div>
         <div class="form-inline my-2 my-lg-0">
-               
+            
             <form action="ProductListSearch" method="POST">
                 <input class="form-control mr-sm" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
-                <input type="submit" name="submit" value="Search">
-                <img src="../img/magnifier.png" alt=""/>
+                <input class="btn btn-outline-success my-2"  type="submit" name="submit" value="Search">
+                
             </form>
             <div style="margin-left: 20px">
                 <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Login</button>

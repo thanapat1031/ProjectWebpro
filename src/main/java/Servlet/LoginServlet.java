@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
             ck2.setMaxAge(60 * 60 * 24 * 7);
             response.addCookie(ck1);
             response.addCookie(ck2);
-            request.getRequestDispatcher("/indexMember.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         } else {
             request.setAttribute("message", "Invalid User id or password");
             request.getRequestDispatcher("/login.jsp").forward(request, response);

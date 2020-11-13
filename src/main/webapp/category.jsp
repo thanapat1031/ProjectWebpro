@@ -12,16 +12,21 @@
         <link href="cssStyle.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product</title>
+       <style>.serif {
+  font-family: "Times New Roman", Times, serif;
+  .sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+}</style>
     </head>
 
     <body class="bg">
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
-
+  <div class="serif">
         <h1 style="text-align: center;">Category</h1>
-
-
-
+ 
+       
         <div class="container" style="margin-right: 4%">
             <div class="row">
                 <div class="col">
@@ -74,7 +79,7 @@
                 <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productName}</div>
             </div>
         </c:forEach>
-        
+        </div>
 
     </body>
 </html>

@@ -27,20 +27,33 @@
     <body>
         <jsp:include page="/WEB-INF/HeaderMember.jsp" />
     <from method = "post" action = "purchase">
-
-        <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">  
-            <tbody>
+        <div class="row">
+            <table class="table table-bordered">
                 <tr>
-                    <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId}/${lineItem.product.productId}.jpg" alt="product img"/></td>
-                    <td class="product-name">${lineItem.product.productName}</td>
-                    <td class="product-price"><span class="amount">${lineItem.price} BATH</span></td>
-                    <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"><button type="submit">add</button> </td>
-                    <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                    <td class="product-remove"><a href="${lineItem.product.productId}">X</a></td>
+                    <td>No</td>
+                    <td>Description</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Total</td>
+                    <td>Delete</td>
                 </tr>
-            </tbody>
-        </c:forEach>
-        <button type="summit">confirm</button>
-    </form>                                      
-</body>
-</html>
+                <from method = "post" action = "ViewCart">
+                    <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
+                        <tbody>
+                            <tr>
+                                <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" alt="product img"/></td>
+                                <td class="product-name">${lineItem.product.productName}</a></td>
+                                <td class="product-price"><span class="amount">${lineItem.price} BATH</span></td>
+
+                                <td class="product-quantity"><input type="number" id="quantity" name="quantity" value ="${lineItem.quantity}"min="1" max="99"> </td>
+
+                                <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
+                                <td class="product-remove"><a href="RemoveItemToCart?eachItem=${lineItem.product.productid}">X</a></td>
+                            </tr>
+                        </tbody>
+                    </c:forEach>
+                    <button type="summit">confirm</button>
+                    </form>
+
+                    </body>
+                    </html>

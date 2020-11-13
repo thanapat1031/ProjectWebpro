@@ -24,36 +24,28 @@
     </head>
     <body>
 
-        <%--<jsp:include page="/WEB-INF/HeaderPage.jsp" />--%>
-        <jsp:include page="/category.jsp"/>
-        <div class="container-fluid">
-            <div class="row rounded border badge-warning p-4 pt-2 pb-2">
-                <div class="col-2">
-                </div>
-                <div class="col-4 ">
-                </div>
-                <div class="col-6 ">
-                </div>
-
-            </div>
+        <jsp:include page="/WEB-INF/HeaderPage.jsp" />
+       
+       
             <div class="row ml-3">
-                <c:forEach items="${product}" var="p">
+                
                     <div class="col-2 border border-primary rounded mx-2 my-3">
                         <label>
-                            <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: blz" >
+                           
                         <div class="img-thumbnail border-0">
-                            <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto" />
-                        </div></a>
+                            <img src="model-img/${product.typeId.typeName}/${product.productId}.jpg" height="600" width="auto"/>
+                            ${product.productName}
+                        </div>
                         <div class="card-block">
-                            <p class="card-text">${p.productPrice}  BAHT
+                            <p class="card-text">${product.productPrice}  BAHT
                                  
-                                <a href="BuyProduct?value=${p.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
+                                <a href="BuyProduct?value=${product.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
                    
                         </div>
-                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productDescription}</div>
+                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${product.productDescription}</div>
                    </label> 
                     </div>
-                </c:forEach>
+            
 
 
             </div>
