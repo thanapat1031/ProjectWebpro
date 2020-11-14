@@ -21,51 +21,55 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
         <title>Category : cage</title>
-        <style>.button1 {background-color: #4CAF50;} 
+        <style>
+            .button1 {background-color: #4CAF50;} 
             .button2 {background-color: red;} 
+            .centertd{
+                text-align: center;
+            }
         </style>
     </head>
-    <body>
+    <body style="overflow-x: hidden">
         <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
         <!--<from method = "post" action = "purchase">-->
+        <div> 
+            <div class="row">
+                <table class="table table-bordered" style="width :99%; margin-left: 10px">
+                    <tr>
+                        <td class="centertd">No</td>
+                        <td class="centertd">Product</td>
+                        <td class="centertd">Name</td>
+                        <td class="centertd">Price</td>
+                        <td class="centertd">Quantity</td>
+                        <td class="centertd">Total</td>
+                        <td class="centertd">Delete</td>
+                    </tr>
+                    <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
+                        <tbody>
+                            <tr>
+                                <td class="centertd">${vs.count}</td>
+                                <td class="product-thumbnail centertd"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" width="200px" height="auto" alt="product img"/></td>
+                                <td class="product-name">${lineItem.product.productName}</a></td>
+                                <td class="product-price"><span class="amount">${lineItem.product.productPrice} BATH</span></td>
+                        <form action="ViewCart?productid=${lineItem.product.productId}" method="POST">
+                            <td><input type="number" name="quantity" value="${lineItem.quantity}" min="0" max="99">
+                                <button type="submit">update</button>
+                            </td>
+                        </form>
 
-        <div class="row">
+                        <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
+                        <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
 
-            <table class="table table-bordered" style="width :99%;">
-                <tr>
-                    <td >No</td>
-                    <td>Product</td>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                    <td>Delete</td>
-                </tr>
-                <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
-                    <tbody>
-                        <tr>
-                            <td>${vs.count}</td>
-                            <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" width="200px" height="auto" alt="product img"/></td>
-                            <td class="product-name">${lineItem.product.productName}</a></td>
-                            <td class="product-price"><span class="amount">${lineItem.product.productPrice} BATH</span></td>
-                    <form action="ViewCart?productid=${lineItem.product.productId}" method="POST">
-                        <td><input type="number" name="quantity" value="${lineItem.quantity}" min="0" max="99">
-                            <button type="submit">update</button>
-                        </td>
+
+                        </tbody>
+                    </c:forEach>
+                    </tr>
+                    <tr><td colspan='5'>
+                        <td> total : ${cart.totalPrice} BATH
+                        <td><a href="Confirm";">Purchase</a></tr>
                     </form>
-
-                    <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                    <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
-
-
-                    </tbody>
-                </c:forEach>
-                </tr>
-                <tr><td colspan='5'>
-                    <td> total : ${cart.totalPrice} BATH
-                    <td><a href="Confirm";">Purchase</a></tr>
-        </form>
-            </table>
+                </table>
+            </div>
         </div>
     </body>
 </html>
