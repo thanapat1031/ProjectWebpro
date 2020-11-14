@@ -1,7 +1,7 @@
- <%-- 
-    Document   : index
-    Created on : Oct 23, 2020, 5:16:39 PM
-    Author     : User
+<%-- 
+   Document   : index
+   Created on : Oct 23, 2020, 5:16:39 PM
+   Author     : User
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,15 +18,17 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
- 
+
 
     </head>
-    
+
     <body  style="background-color: #ffca00">
         <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
         <!--<div>
             <img class="logo" src="img/logo.png" width="15%" height="auto"></div>-->
-        <img src="img/promotion.gif" alt="promotion" class="right"/>
+        <div style="text-align: center; margin-top: 5%">
+            <img src="img/promotion.gif" alt="promotion" class="right"/>
+        </div>
         <br>
         <div class="container center" style="margin-right: 10%">
             <div class="row">
@@ -34,11 +36,11 @@
                     <a href="ViewProduct?productId=1024"><img class="logo" src="img/saleroyale.jpg" width="80%" height="90%" ></a>
                 </div>
                 <div class="col">
-                     <a href="ViewProduct?productId=1040"><img class="logo" src="img/salecondo.webp"width="80%" height="90%"  ></a>
+                    <a href="ViewProduct?productId=1040"><img class="logo" src="img/salecondo.webp"width="80%" height="90%"  ></a>
                 </div>
             </div>     
-            </div>
-          
-                </body>
-                </html>
+        </div>
+
+    </body>
+</html>
 

@@ -42,7 +42,7 @@
     }
     /* Set a style for all buttons */
 
-  
+
 
     button:hover {
         opacity: 0.8;
@@ -162,7 +162,7 @@
             width: 100%;
         }
     }
-    
+
 </style>
 
 
@@ -210,7 +210,7 @@
             <label for="psw"><b>Password</b></label>
 
             <input type="password" placeholder="Enter Password" name="password">
-            <button type="submit" onclick="form.action = 'Login';" >Login</button>                 
+            <button type="submit" onclick="loginFail()">Login</button>                 
             <label><input type="checkbox" checked="checked" name="remember">Remember me </label>
             <hr>
             <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          
@@ -230,6 +230,13 @@
         }
     }
 
-
+    function loginFail() {
+        var modal_1 = document.getElementById('id01');
+        window.onclick = function (logfail) {
+            if (logfail.target == model) {
+                modal.window.alert("Invalid User id or password");
+            }
+        }
+    }
 
 </script>
