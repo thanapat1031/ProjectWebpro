@@ -55,7 +55,7 @@
                     </form>
 
                     <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                    <td><a href="Remove?remove=${lineItem.product.productId}"><h5> X delete</h5> </a></td>
+                    <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
 
 
                     </tbody>
@@ -64,7 +64,7 @@
                 <tr><td colspan='5'>
                     <td> total : ${cart.totalPrice} BATH
                     <td><a href="Confirm";">Purchase</a></tr>
-                </form>
+        </form>
             </table>
         </div>
     </body>

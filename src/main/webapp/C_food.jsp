@@ -26,38 +26,34 @@
 
         <%--<jsp:include page="/WEB-INF/HeaderPage.jsp" />--%>
         <jsp:include page="/category.jsp"/>
-        <div style="text-align: center">
-            <div class="container" style="margin-right : 0%; margin-top : 3%">
-                <div class="container-fluid" >
-                    <div class="col-2">
-                    </div>
-                    <div class="col-4 ">
-                    </div>
-                    <div class="col-6 ">
-                    </div>
-
+        <div class="container-fluid">
+            <div class="row rounded border badge-light p-4 pt-2 pb-2">
+                <div class="col-2">
                 </div>
-                <div class="row ml-3 mx-2 container-fluid" ">
-                    <c:forEach items="${product}" var="p">
-                        <div class="col-3  rounded mx-2 my-3 card-text img-thumbnail">
-                            <label>
-                                <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: blz" >
-                                    <div class="imgcontainer">
-                                        <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto" />
-                                    </div></a>
-
-                                <b><div class="card-block">  
-                                        ${p.productName}
-                                        <p class="card-text" style="color : white;">${p.productPrice}  BAHT
-                                            <a href="BuyProduct?productId=${p.productId}"><input type="submit" name="submit" value="buy now" class="button button4" style="margin-left: 10%"></a>  
-                                    </div></b>
-                            </label> 
-                        </div>
-                    </c:forEach>
-
-
+                <div class="col-4 ">
                 </div>
+                <div class="col-6 ">
+                </div>
+
             </div>
-        </div>
+            <div class="row ml-3 mx-2 rounded ">
+                <c:forEach items="${product}" var="p">
+                    <div class="col-3  rounded mx-2 my-3 card-text">
+                        <label>
+                            <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: blz" >
+                        <div class="img-thumbnail border-0">
+                            <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto" />
+                        </div></a>
+                        <b><div class="card-block">
+                            <p class="card-text" style="color : white;">${p.productPrice}  BAHT
+                                <a href="BuyProduct?productId=${p.productId}"><input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a>  
+                            </div></b>
+                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px; color : white;">${p.productDescription}</div>
+                   </label> 
+                    </div>
+                </c:forEach>
+
+
+            </div>
     </body>
 </html>
