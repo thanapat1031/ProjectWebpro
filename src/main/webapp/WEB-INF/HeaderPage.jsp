@@ -5,8 +5,29 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;
+    }
+
+    .button4:hover {background-color: #e7e7e7;}
+
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Lucida Console", Courier, monospace;
     }
     /* Full-width input fields */
 
@@ -21,15 +42,7 @@
     }
     /* Set a style for all buttons */
 
-    button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    }
+  
 
     button:hover {
         opacity: 0.8;
@@ -149,8 +162,11 @@
             width: 100%;
         }
     }
+    
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -174,9 +190,11 @@
 
             <form action="ProductListSearch" method="POST">
                 <input class="form-control mr-sm-2" type="search" name ="searchParam"value="${param.searchParam}"placeholder="Search" aria-label="Search"  minlength="3" required/>
-                <input type="submit" name="submit" value="Search">
+                <input type="submit" name="submit" value="Search" class="button button4">
             </form>
-            <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">${user==null? 'Login' : 'Logout'}</button>
+            <div style="margin-right: 6px; margin-left: 6px">
+                <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">${user==null? 'Login' : 'Logout'}</button>
+            </div>
         </div>
         Hello,${user==null?'Guest':user.userName}
     </div>

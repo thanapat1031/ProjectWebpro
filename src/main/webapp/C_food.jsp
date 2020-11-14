@@ -27,7 +27,7 @@
         <%--<jsp:include page="/WEB-INF/HeaderPage.jsp" />--%>
         <jsp:include page="/category.jsp"/>
         <div class="container-fluid">
-            <div class="row rounded border badge-warning p-4 pt-2 pb-2">
+            <div class="row rounded border badge-light p-4 pt-2 pb-2">
                 <div class="col-2">
                 </div>
                 <div class="col-4 ">
@@ -36,19 +36,19 @@
                 </div>
 
             </div>
-            <div class="row ml-3">
+            <div class="row ml-3 mx-2 rounded ">
                 <c:forEach items="${product}" var="p">
-                    <div class="col-2 border border-primary rounded mx-2 my-3">
+                    <div class="col-3  rounded mx-2 my-3 card-text">
                         <label>
                             <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: blz" >
                         <div class="img-thumbnail border-0">
                             <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto" />
                         </div></a>
-                        <div class="card-block">
-                            <p class="card-text">${p.productPrice}  BAHT
-                                <a href="BuyProduct?productId=${p.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
-                        </div>
-                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${p.productDescription}</div>
+                        <b><div class="card-block">
+                            <p class="card-text" style="color : white;">${p.productPrice}  BAHT
+                                <a href="BuyProduct?productId=${p.productId}"><input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a>  
+                            </div></b>
+                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px; color : white;">${p.productDescription}</div>
                    </label> 
                     </div>
                 </c:forEach>

@@ -21,21 +21,23 @@
  
 
     </head>
-    <body class="bg">
+    
+    <body  style="background-color: #ffca00">
         <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
-
-        <div>
-            <img class="logo" src="img/logo.png" width="15%" height="auto"></div>
-        <img src="img/promotion.gif" alt=""/>
-        <div class="container" style="margin-right: 10%">
+        <!--<div>
+            <img class="logo" src="img/logo.png" width="15%" height="auto"></div>-->
+        <img src="img/promotion.gif" alt="promotion" class="right"/>
+        <br>
+        <div class="container center" style="margin-right: 10%">
             <div class="row">
                 <div class="col">
-                    <a href="ViewProduct?productId=1024"><img class="logo" src="img/saleroyale.jpg" width="80%" height="auto" ></a>
+                    <a href="ViewProduct?productId=1024"><img class="logo" src="img/saleroyale.jpg" width="80%" height="90%" ></a>
                 </div>
                 <div class="col">
-                     <a href="ViewProduct?productId=1040"><img class="logo" src="img/salecondo.webp"width="80%" height="auto"  ></a>
+                     <a href="ViewProduct?productId=1040"><img class="logo" src="img/salecondo.webp"width="80%" height="90%"  ></a>
                 </div>
-               
+            </div>     
+            </div>
           
                 </body>
                 </html>

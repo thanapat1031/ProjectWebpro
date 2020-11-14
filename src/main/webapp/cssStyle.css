@@ -1,6 +1,6 @@
-.bg {
-    background-color: #F7DC6F;
-        scroll-behavior: smooth;
+.bggg {
+    background-color: whitesmoke;
+    scroll-behavior: smooth;
 }
 .logo {
     display: block;
@@ -33,6 +33,7 @@
     /* Safari 3-8 */
     transform: scale(1.5);
 }
+
 /*.container {
     width: 70%;
     height: 70%;

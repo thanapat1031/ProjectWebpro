@@ -12,40 +12,30 @@
         <title>Confirm Order</title>
     </head>
     <body>
-        <jsp:include page="/WEB-INF/HeaderMember.jsp"/>
+        <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
         <!--<from method = "post" action = "purchase">-->
         
-        <div class="row">
-           
-                <table class="table table-bordered" style="margin-left: 20%">
-                    <tr>
-                        <td>No</td>
-                        <td>Product</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Total</td>
-                        <td>Delete</td>
-                    </tr>
-                    <c:forEach items="${cart.items}" var="lineItem" varStatus="vs">
-                        <tbody>
-                            <tr>
-                                <td>${vs.count}</td>
-                                <td class="product-thumbnail"><img src="model-img/${lineItem.product.typeId.typeName}/${lineItem.product.productId}.jpg" width="200px" height="auto" alt="product img"/></td>
-                                <td class="product-name">${lineItem.product.productName}</a></td>
-                                <td class="product-price"><span class="amount">${lineItem.product.productPrice} BATH</span></td>
-                                <td class="product-quantity">${lineItem.quantity}</td>
-                                <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
-                                <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
-                           
-                                
-                        </tbody>
-                    </c:forEach>
-                         
-            
-        </table>
-    </div>
-                                
-            <div shipping>
+            <form acion="Confirm" method="Post">
+                                    <br> 
+                                    <p style = "margin-right : 3%"> Please fill your address </p>
+                                    <input type="checkbox" id="myaddress" name="myaddress" value="myaddress">your address
+                                    <br><input type="checkbox" id="newaddress" name="newaddress" value="newaddress">other(fill your address)
+                                    <br><input type="text" id="newad" name="newad"><br><br>
+                                    <br>
+                                    <br> 
+                                    <p> Purchase with : </p>
+                                    <input type="checkbox" id="e-bill" name="e-bill" value="e-bill">E-bill
+                                    <br><input type="checkbox" id="cash" name="cash" value="cash">Cash
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <button><a href="Confirm";">CONFIRM</a></button>
+                                </form>
     </body>
 </html>

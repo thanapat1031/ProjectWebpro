@@ -26,14 +26,14 @@
         </style>
     </head>
     <body>
-        <jsp:include page="/WEB-INF/HeaderMember.jsp"/>
+        <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
         <!--<from method = "post" action = "purchase">-->
 
         <div class="row">
 
-            <table class="table table-bordered" style="margin-left: 20%">
+            <table class="table table-bordered" style="width :99%;">
                 <tr>
-                    <td>No</td>
+                    <td >No</td>
                     <td>Product</td>
                     <td>Name</td>
                     <td>Price</td>
@@ -49,7 +49,7 @@
                             <td class="product-name">${lineItem.product.productName}</a></td>
                             <td class="product-price"><span class="amount">${lineItem.product.productPrice} BATH</span></td>
                     <form action="ViewCart?productid=${lineItem.product.productId}" method="POST">
-                        <td><input type="number" name="quantity" value="${lineItem.quantity}" "min="1" max="99">
+                        <td><input type="number" name="quantity" value="${lineItem.quantity}" min="0" max="99">
                             <button type="submit">update</button>
                         </td>
                     </form>
@@ -61,9 +61,10 @@
                     </tbody>
                 </c:forEach>
                 </tr>
-                <tr><td colspan='6'>
+                <tr><td colspan='5'>
+                    <td> total : ${cart.totalPrice} BATH
                     <td><a href="Confirm";">Purchase</a></tr>
-                </form
+        </form>
             </table>
         </div>
     </body>

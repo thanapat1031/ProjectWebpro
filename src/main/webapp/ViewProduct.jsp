@@ -21,33 +21,38 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
         <title>Category : food</title>
+        <style>table, th, td {
+
+                padding: 70px;
+            }
+            table {
+                border-spacing: 15px;
+            }
+            font-face {
+                font-family: 'Designil Thai Font';
+                unicode-range: U+0E00–U+0E7F;
+            }</style>
     </head>
-    <body>
+    <body   style="background-color: #ffca00">>
 
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
-       
-       
-            <div class="row ml-3">
-                
-                    <div class="col-2 border border-primary rounded mx-2 my-3">
-                        <label>
-                           
-                        <div class="img-thumbnail border-0">
-                            <img src="model-img/${product.typeId.typeName}/${product.productId}.jpg" height="600" width="auto"/>
-                            ${product.productName}
-                        </div>
-                        <div class="card-block">
-                            <p class="card-text">${product.productPrice}  BAHT
-                                 
-                                <a href="BuyProduct?value=${product.productId}"><img src="img/cart.png" width="30px" height="auto"/></a>  
-                   
-                        </div>
-                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px;">${product.productDescription}</div>
-                   </label> 
-                    </div>
-            
 
 
-            </div>
-    </body>
+
+
+        <div style="background-color:whitesmoke; width:100%">
+            <!--                                <div class="img-thumbnail border-0"  ">-->
+            <table>
+                <tr>
+                    <td ><div>    <img src="model-img/${product.typeId.typeName}/${product.productId}.jpg" height="300px" width="auto" />     
+                            <td> <h1 class="font-face">            ${product.productName} </h1>
+                                <br><h3 style="font-family: monospace">${product.productPrice}  BAHT  <a href="BuyProduct?productId=${product.productId}">   <input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a>     </h3>   
+                                <br>   ${product.productDescription}
+                        </div>
+                </tr>
+        </div>
+    </table>>
+</div>
+
+</body>
 </html>
