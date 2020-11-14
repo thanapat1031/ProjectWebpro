@@ -44,7 +44,7 @@ public class BuyProductServlet extends HttpServlet {
 
         if (value == 0 || value < 1001 || value > 1090) {
 
-            request.getRequestDispatcher("/category.jsp").forward(request, response);
+            request.getRequestDispatcher("/C_food.jsp").forward(request, response);
             return;
         }
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
