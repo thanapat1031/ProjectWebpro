@@ -33,7 +33,7 @@
                 unicode-range: U+0E00–U+0E7F;
             }</style>
     </head>
-    <body   style="background-color: #ffca00">>
+    <body   style="background-color: #ffca00">
 
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
 
@@ -46,12 +46,12 @@
                 <tr>
                     <td ><div>    <img src="model-img/${product.typeId.typeName}/${product.productId}.jpg" height="300px" width="auto" />     
                             <td> <h1 class="font-face">            ${product.productName} </h1>
-                                <br><h3 style="font-family: monospace">${product.productPrice}  BAHT  <a href="BuyProduct?productId=${product.productId}">   <input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a>     </h3>   
+                                <br><h3 style="font-family: monospace">${product.productPrice}  BAHT  <a href="BuyProduct?productId=${product.productId}">   <input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a></h3>   
                                 <br>   ${product.productDescription}
                         </div>
                 </tr>
         </div>
-    </table>>
+    </table>
 </div>
 
 </body>
