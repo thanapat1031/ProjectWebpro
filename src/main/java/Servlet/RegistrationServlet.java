@@ -63,28 +63,13 @@ public class RegistrationServlet extends HttpServlet {
             } finally {
                 em.getTransaction().commit();
                 em.close();
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("message", "your password not correct Please try again");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Registration</title>");
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet RegistrationServlet at " + request.getContextPath() + "</h1>");
-//            out.println("<H3>User Info</H3><hr>");
-//            out.println(email + "already for email");
-//            out.println("Your email is : " + email + "<br>");
-//            out.println("Your user name is : " + username + "<br>");
-//            out.println("Your password is : " + password + "<br>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
+           request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -117,6 +102,7 @@ public class RegistrationServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         processRequest(request, response);
+      
     }
 
     /**

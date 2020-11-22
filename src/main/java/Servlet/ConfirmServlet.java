@@ -41,6 +41,12 @@ public class ConfirmServlet extends HttpServlet {
         String checkout = request.getParameter("purchase");
         
         HttpSession session = request.getSession();
+        if(session == null || session.getAttribute("user") == null){
+            
+              request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }
+        
+        
         HttpSession cart = request.getSession();
         Cart c = (Cart) session.getAttribute("cart");
         Customer customerid = (Customer) session.getAttribute("user");

@@ -36,8 +36,7 @@ public class ViewCartServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("cart") == null) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Session not available");
-            return;
+           request.getRequestDispatcher("/category.jsp").forward(request, response);
         }
         request.getRequestDispatcher("/ViewCart.jsp").forward(request, response);
     }

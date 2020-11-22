@@ -162,19 +162,63 @@
             width: 100%;
         }
     }
+    .dropbtn {
+
+
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        float :  right;
+        margin-right : 165px;
+
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+
+
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+
+    }
+
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
 
 </style>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffca00" >
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="index.jsp">
+        <a class="navbar-brand logo" href="index.jsp">
             <img src="img/logo.png" width="60" height="auto"/>Meow Meow</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="category.jsp">Product<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
@@ -193,15 +237,19 @@
                 <input type="submit" name="submit" value="Search" class="button button4">
             </form>
             <div style="margin-right: 6px; margin-left: 6px">
-                <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">${user==null? 'Login' : 'Logout'}</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.getElementById(${user==null? "'id01'" : "'id02'"}).style.display = 'block'" style="width:auto;"> ${user==null?'Login':user.userName}</button>
             </div>
         </div>
-        Hello,${user==null?'Guest':user.userName}
+
     </div>
-</div>
 </nav>
 
 </nav>
+<div  class="dropdown" >
+    <div id="id02"  class="dropdown-content" >
+        <a href="Logout">Log out</a>
+    </div>
+</div>
 <div id="id01" class="modal">
     <form class="modal-content animate" action="Login" method="post">
         <div class="container">
@@ -215,9 +263,18 @@
             <hr>
             <br><a href="Registration.jsp"><button type="button">Sign Up</button></a>          
             <br><button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
-            <span class="psw"><a href="#">Forget password?</a></span>
+            <img src="img/logo.png" width="200px" height="auto" style="margin-left: 10%"/>
         </div>
     </form>
+</div>
+<div id="id02"  class="dropdown">
+
+    <div id="myDropdown" class="dropdown-content" >
+       
+        
+        <a href="Logout">Log out</a>
+    </div>
+</div>
 </div>
 
 <script>
@@ -238,5 +295,21 @@
             }
         }
     }
+    function myFunction() {
+        document.getElementById("id02").classList.toggle("show");
+    }
 
+// Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.btn-outline-success')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 </script>

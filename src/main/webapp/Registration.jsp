@@ -49,11 +49,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" placeholder="Enter Email" name="new_email" required>
+                                    <input type="email" class="form-control" placeholder="Enter Email" name="new_email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Tel.</label>
-                                    <input type="text" class="form-control" placeholder="Telephone number" name="new_tel" required>
+                                    <input type="text" class="form-control" placeholder="Telephone number" name="new_tel" maxlength="10" pattern="\d{10}" required>
                                 </div>
                                 <button type="submit" value="signup" class=" btn btn-block mybtn btn-primary tx-tfm">Sign Up</button> 
                                 <!--                                <div class="col-md-12 text-center ">

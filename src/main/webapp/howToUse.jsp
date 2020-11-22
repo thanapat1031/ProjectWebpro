@@ -23,14 +23,16 @@
         <title>Category : cage</title>
         <style>
             body{
-                background-image: url('img/howtouse1.jpg');
+              
                 background-color: #F7DC6F;
             }
         </style>
     </head>
     <body>
         <jsp:include page="/WEB-INF/HeaderPage.jsp" />
-        <!--<img src="img/howtouse1.jpg" alt="" width="1350px" height="auto"/>-->
-        <h1>33</h1>
+        <img src="img/howtouse1.jpg" alt="" width="1350px" height="auto"/>
+ 
+        
+        <h1></h1>
     </body>
 </html>

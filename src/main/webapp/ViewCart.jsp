@@ -59,8 +59,6 @@
 
                         <td class="product-subtotal">${lineItem.totalPrice} BATH</td>
                         <td><a href="Remove?remove=${lineItem.product.productId}"> X </a></td>
-
-
                         </tbody>
                     </c:forEach>
                     </tr>

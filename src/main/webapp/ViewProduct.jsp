@@ -45,10 +45,14 @@
             <table>
                 <tr>
                     <td ><div>    <img src="model-img/${product.typeId.typeName}/${product.productId}.jpg" height="300px" width="auto" />     
-                            <td> <h1 class="font-face">${product.productName}</h1>
 
-                                <br><h3 style="font-family: monospace">${product.productPrice}  BAHT  <a href="BuyProduct?productId=${product.productId}"><input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a></h3>   
+                            <td> <h1 class="font-face">${product.productName}  </h1>
+                              
+                                <br><h3 style="font-family: monospace">${product.productPrice}  BAHT  <a href="BuyProduct?productId=${product.productId}"><input type="submit" name="submit" value="buy now" class="button button4" style="margin-left: 10%"></a></h3>   
+                                <br>brand : ${product.brandId.brandName}
                                 <br>${product.productDescription}
+
+                            
                         </div>
                 </tr>
         </div>

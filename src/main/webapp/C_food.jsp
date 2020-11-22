@@ -20,14 +20,14 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-        <title>Category : food</title>
+        
     </head>
     <body>
 
         <%--<jsp:include page="/WEB-INF/HeaderPage.jsp" />--%>
         <jsp:include page="/category.jsp"/>
-        <div class="container-fluid">
-            <div class="row rounded border badge-light p-4 pt-2 pb-2">
+        <div class="container" style="margin-right : 0%; margin-top : 3%">
+            <div class="row container-fluid ">
                 <div class="col-2">
                 </div>
                 <div class="col-4 ">
@@ -36,24 +36,27 @@
                 </div>
 
             </div>
-            <div class="row ml-3 mx-2 rounded ">
+            <div class="row container center">
                 <c:forEach items="${product}" var="p">
-                    <div class="col-3  rounded mx-2 my-3 card-text">
+                    <div class="col-3 center mx-2 my-3 img-thumbnail" style="text-align: center">
                         <label>
-                            <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: blz" >
-                        <div class="img-thumbnail border-0">
+                           
+                            <a href="ViewProduct?productId=${p.productId}" target="_top" style="text-decoration: none; color: black" >
+                        <div class="img-thumbnail border-0 ">
                             <img src="model-img/${p.typeId.typeName}/${p.productId}.jpg" height="100" width="auto" />
                         </div></a>
                         <b><div class="card-block">
-                            <p class="card-text" style="color : white;">${p.productPrice}  BAHT
-                                <a href="BuyProduct?productId=${p.productId}"><input type="submit" name="submit" value="buy now" class="button button6" style="margin-left: 10%"></a>  
+                                ${p.productName}
+                                <p>
+                            <p class="card-text" style="color : black;">${p.productPrice}  BAHT
+                                <p>
+                                <a href="BuyProduct?productId=${p.productId}"><input type="submit" name="submit" value="buy now" class="button button4" style="margin-left: 10%"></a>  
                             </div></b>
-                        <div style="font-size: 0.7em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;width: 200px; color : white;">${p.productDescription}</div>
-                   </label> 
+                           </label> 
                     </div>
                 </c:forEach>
 
-
+                   </div>
             </div>
     </body>
 </html>

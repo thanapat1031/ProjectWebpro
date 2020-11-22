@@ -34,6 +34,7 @@ public class LogoutServlet extends HttpServlet {
 
         if (mySession != null) {
             mySession.invalidate(); 
+           
         }
         
        request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -53,8 +54,8 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-         request.getRequestDispatcher("/index.jsp").forward(request, response);
+        processRequest(request, response);
+        // request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     /**

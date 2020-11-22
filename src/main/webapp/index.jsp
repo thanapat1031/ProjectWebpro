@@ -22,7 +22,7 @@
 
     </head>
 
-    <body  style="background-color: #ffca00">
+    <body  style="background-color: whitesmoke">
         <jsp:include page="/WEB-INF/HeaderPage.jsp"/>
         <!--<div>
             <img class="logo" src="img/logo.png" width="15%" height="auto"></div>-->

@@ -45,10 +45,11 @@ public class ProductListSearchServlet extends HttpServlet {
         }
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_ProjectWebPro_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String sql = "SELECT p FROM Product p WHERE p.productName like :pn OR p.productDescription like :pv";
+        String sql = "SELECT p FROM Product p join Brand b on p.brandId=p.brandId WHERE p.productName like :pn OR p.productDescription like :pv OR b.brandName like :pq";
         Query qry = em.createQuery(sql);
         qry.setParameter("pn", "%" + searchParam + "%");
         qry.setParameter("pv", "%" + searchParam + "%");
+        qry.setParameter("pq", "%" + searchParam + "%");
         List<Product> pd = qry.getResultList();
         request.setAttribute("products", pd);
         

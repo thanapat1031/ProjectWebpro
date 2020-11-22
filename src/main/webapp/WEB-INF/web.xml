@@ -9,10 +9,6 @@
         <servlet-class>Servlet.RegistrationServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VerifyServlet</servlet-name>
-        <servlet-class>Servlet.VerifyServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ProductListSearchServlet</servlet-name>
         <servlet-class>Servlet.ProductListSearchServlet</servlet-class>
     </servlet>
@@ -51,10 +47,6 @@
     <servlet-mapping>
         <servlet-name>RegistrationServlet</servlet-name>
         <url-pattern>/Registration</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VerifyServlet</servlet-name>
-        <url-pattern>/Verify</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProductListSearchServlet</servlet-name>
